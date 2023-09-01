@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 
 namespace SalesWebMvc.Models.Enums
 {
-    public enum SalesStatus :int
+    public enum SaleStatus :int
     {
         Pending= 0,
-        bill= 1,
-        cancel= 2
+        Billed= 1,
+        Canceled= 2
     }
 }
