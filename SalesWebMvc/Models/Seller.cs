@@ -31,7 +31,7 @@ namespace SalesWebMvc.Models
 
         public Department Department { get; set; }
         public int DepartmentId { get; set; }
-        ICollection<SalesRecord> Sales { get; set; } = new List<SalesRecord>();
+        public ICollection<SalesRecord> Sales { get; set; } = new List<SalesRecord>();
         public Seller()
         {
 
@@ -57,7 +57,7 @@ namespace SalesWebMvc.Models
         }
         public double TotalSales(DateTime inicial, DateTime final)
         {
-            return Sales.Where(sr => sr.Date >= inicial && sr.Date >= final).Sum(sr => sr.Amount);
+            return Sales.Where(sr => sr.Date >= inicial && sr.Date <= final).Sum(sr => sr.Amount);
         }
     }
         
